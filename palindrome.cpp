@@ -11,7 +11,7 @@ int main()
 	std::cout << "Enter a number:";
 	std::cin >> n;
 	
-	if(n = revesi(n))
+	if(n == revesi(n))
 	{
 		std::cout << "Number is Palindrome";
 	}
