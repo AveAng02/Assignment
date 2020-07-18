@@ -1,18 +1,25 @@
-//Factioial of a number
-
 #include <iostream>
+
+int fact(int);
 
 int main()
 {
-	int i = 0, f = 1, n = 0; //Variables
+	int n = 0;
 
 	std::cout << "Enter a Integer: "	<< std::endl;
-	Std::cin >> n;
+	std::cin >> n;
 	
-	for(i = 1; i <= n; i++)
+	std::cout << "The Factorial of " << n << "is: " << fact(n);
+}
+
+int fact(int n)
+{
+    int i = 1, f = 1;
+    
+    for(i = 1; i <= n; i++)
 	{
 		f = f * i;
 	}
 	
-	std::cout << "The Factorial of " << n << "is: " << f;
+	return f;
 }
