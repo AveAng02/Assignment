@@ -1,21 +1,31 @@
 //Palindrome check using String
 
 #include <iostream>
-#include <string>
 
 #define TRUE 1
 #define FALSE 0
 
-int palin(string, int, int);
+int palin(int low, int high, std::string str)
+{
+	if(low >= high)
+	{
+        return TRUE;
+	}
+		
+	if(str[low] == str[high] && palin(low + 1, high - 1, str) == TRUE)
+	{
+	    return TRUE;
+	}
+}
 
 int main()
 {
-	string st = "";
+    std::string st;
 	
 	std::cout << "Enter a word: ";
-	std::cin >> st;
+	std::getline(std::cin, st);
 	
-	if(palin(st, 0, st.length() - 1) == TRUE)
+	if(palin(0, st.length() - 1, st) == TRUE)
 	{
 		std::cout << "Sting is Palindome." << std::endl;
 	}
@@ -25,21 +35,3 @@ int main()
 	}
 }
 
-int palin(sting g, int a, int b)
-{
-	if(a <= g.length())
-	{
-		if(g[a] == g[b] && palin(g, a + 1, b - 1) == TRUE)
-		{
-			return TRUE;
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-	else
-	{
-		return TRUE;
-	}
-}
