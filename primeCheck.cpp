@@ -1,5 +1,3 @@
-//Prime check.
-
 #include <iostream>
 #include <cmath>
 
@@ -31,6 +29,16 @@ int main()
 
 int primeCheck(int k)
 {
+	/*
+	* This snippet checks for negative integers, 0 or 1 
+	* As none of these are prime numbers a warning statement is printed.
+	*/
+	if(k <= 1)
+	{
+	    std::cout << "Invalid Input" << std::endl;
+	    return FALSE;
+	}
+	
 	/*
 	* Any integer that does not have a factor which is 
 	* less than square root of itself is bound to be a prime.
