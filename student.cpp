@@ -17,7 +17,7 @@ struct student
 void Details(student* s)
 {
     std::cout << "Enter name :";
-    std::getline(std::cin, s->name);
+    std::cin >> s->name;
     std::cout << "Enter roll :";
     std::cin >> s->roll;
     std::cout << "Enter Marks:\nPhysic:";
