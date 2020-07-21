@@ -1,13 +1,10 @@
 #ifndef VECTOR_H_
 #define VECTOR_H_
 
-#include <string>
-
 class Vector
 {
     double x;
     double y;
-    int foo;
     
     public:
     
@@ -15,6 +12,12 @@ class Vector
     {
         x = i;
         y = j;
+    }
+
+    Vector()
+    {
+        x = 0;
+        y = 0;
     }
     
     void setCoord(double i, double j);
@@ -25,7 +28,7 @@ class Vector
     Vector add(Vector v);
     Vector sub(Vector v);
     
-    double Mag();
+    double Mod();
     double Dot(Vector v);
     Vector Cross(Vector v);
     

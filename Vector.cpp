@@ -1,5 +1,5 @@
 #include <cmath>
-#include Vector.h 
+#include "Vector.h" 
 
 void Vector::setCoord(double i, double j)
 {
@@ -7,59 +7,61 @@ void Vector::setCoord(double i, double j)
     this->y = j;
 }
     
-double getX()
+double Vector::getX()
 {
     return this->x;
 }    
     
-double getY()
+double Vector::getY()
 {
     return this->y;
 }    
     
-Vector add(Vector v)
+Vector Vector::add(Vector v)
 {
     double i = this->x + v.x;
     double j = this->y + v.y;
     return Vector(i, j);
 }
     
-Vector sub(Vector v)
+Vector Vector::sub(Vector v)
 {
     double i = this->x - v.x;
     double j = this->y - v.y;
     return Vector(i, j);
 }
     
-double Mod()
+double Vector::Mod()
 {
     return sqrt(pow(this->x, 2) + pow(this->y, 2));
 }
     
-double Dot(Vector v)
+double Vector::Dot(Vector v)
 {
     return (this->x * v.x) + (this->y * v.y);
 }
     
-Vector Cross(Vector v)
+Vector Vector::Cross(Vector v)
 {
-    Vector a = ((this->x * v.y) - (this->y * v.x))*normalize();
+    Vector a;
+    a.setCoord((this->x * v.y), (-1 * this->y * v.x));
+
     return a;
 }
     
-void Multi(int n)
+void Vector::Multi(int n)
 {
     this->x = this->x * n;
     this->y = this->y * n;
 }
 
-void Divi(int n)
+void Vector::Divi(int n)
 {
     this->x = this->x / n;
     this->y = this->y / n;
 }
     
-void normalize()
+void Vector::normalize()
 {
     Divi(Mod());
 }
