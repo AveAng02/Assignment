@@ -12,7 +12,7 @@ struct student
     double math;
     double avg;
     int rank;
-} temp;
+};
 
 void Details(student* s)
 {
@@ -31,7 +31,9 @@ void Details(student* s)
 
 void ranking(student stu[], int n)
 {
-    for(int j,max,i = 0; i < n - 1; i++)
+    student temp;
+	
+	for(int j,max,i = 0; i < n - 1; i++)
     {
         max = i;
         for(j = i + 1; j < n; j++)
