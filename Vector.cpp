@@ -49,13 +49,13 @@ Vector Vector::Cross(Vector v)
     return a;
 }
     
-void Vector::Multi(int n)
+void Vector::Multi(double n)
 {
     this->x = this->x * n;
     this->y = this->y * n;
 }
 
-void Vector::Divi(int n)
+void Vector::Divi(double n)
 {
     this->x = this->x / n;
     this->y = this->y / n;
@@ -63,7 +63,12 @@ void Vector::Divi(int n)
     
 void Vector::normalize()
 {
-    Divi(Mod());
+    if(Mod() == 0)
+	{
+		return;
+	}
+	
+	Divi(Mod());
 }
     
     
